@@ -6,6 +6,8 @@
 int main(void)
 {
 	void sigint_handler(int sig);
+//	void sigtstp_handler(int snl);
+//	void sigquit_handler(int sth);
 	char s[200];
 
 	if(signal(SIGINT, sigint_handler) == SIG_ERR){
@@ -21,9 +23,19 @@ int main(void)
 		printf("You entered:%s\n",s);
 
 	return 0;
-	}
+}
 
 	void sigint_handler(int sig)
 	{
 	printf("jangan Kacau saya!\n");
-}
+	}
+
+//	void sigtstp_handler(int snl)
+//	{
+//	printf("This is a special signal handler for <stop>\n");
+//	}
+//
+//	void sigquit_handler(int sth)
+//	{
+//	printf("This is a special signal handler for <quit>\n");
+//	}
